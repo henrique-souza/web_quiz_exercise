@@ -1,5 +1,10 @@
+:root{
+    --default-margin: auto;
+}
+
 * {
     background-color: rgba(110, 104, 104, 0.541);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -9,17 +14,17 @@ img {
 
 .homePicture {
     display: flex;
-    margin-left: auto;
-    margin-right: auto
+    margin-left: var(--default-margin);
+    margin-right: var(--default-margin)
 }
 
 h1 {
     display: block;
     font-size: 2em;
-    margin-block-start: auto;
-    margin-block-end: auto;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-block-start: var(--default-margin);
+    margin-block-end: var(--default-margin);
+    margin-inline-start: var(--default-margin);
+    margin-inline-end: var(--default-margin);
     font-weight: bold;
     text-align: center;
 }
@@ -29,10 +34,19 @@ p,
 button {
     display: block;
     font-size: 2em;
-    margin-block-start: auto;
-    margin-block-end: auto;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-block-start: var(--default-margin);
+    margin-block-end: var(--default-margin);
+    margin-inline-start: var(--default-margin);
+    margin-inline-end: var(--default-margin);
     font-weight: 200;
     text-align: center;
+}
+html {
+    display: block;
+    margin-block-start: var(--default-margin);
+    margin-block-end: var(--default-margin);
+    height: 294.969px;
+    width: 700px;
+    margin-left: var(--default-margin);
+    margin-right: var(--default-margin)
 }

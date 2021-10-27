@@ -1,10 +1,19 @@
 "use strict";
 
-var start;
+/* var start;
 start = 0;
-alert('Teste seus conhecimentos neste QUIZ')
+alert('Teste seus conhecimentos neste QUIZ') */
 
-const switcher = document.querySelector(".button");
+const switcher = document.querySelector(".choiceA");
+
+/* switch (key) {
+  case value:
+    
+    break;
+
+  default:
+    break;
+} */
 
 switcher.addEventListener("click", function () {
   var mensagem;
