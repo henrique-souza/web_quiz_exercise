@@ -16,7 +16,7 @@ const minhasQuestoes = [
   {
     questao2:
       "Como o Coronavírus é transmitido?",
-    choice1: "<script href='xxx.js'>",
+    choice1: "",
     choice2: "<script name='xxx.js'>",
     choice3: "<script src='xxx.js'>",
     choice4: "<script file='xxx.js'>",
