@@ -20,4 +20,5 @@ switcher.addEventListener("click", function () {
   document.body.classList.toggle(mensagem);
   alert("Olá.");
 });
-/* var question1 =  */
+
+/* Tentar chamar o questions.json assim q terminar as tarefas */
