@@ -6,15 +6,6 @@ alert('Teste seus conhecimentos neste QUIZ') */
 
 const switcher = document.querySelector(".choiceA");
 
-/* switch (key) {
-  case value:
-    
-    break;
-
-  default:
-    break;
-} */
-
 switcher.addEventListener("click", function () {
   var mensagem;
   document.body.classList.toggle(mensagem);
@@ -22,3 +13,6 @@ switcher.addEventListener("click", function () {
 });
 
 /* Tentar chamar o questions.json assim q terminar as tarefas */
+
+/* questoes.questao1
+questoes['answer'] */
