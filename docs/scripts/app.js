@@ -183,15 +183,16 @@ function generateQuiz(
  */
 var myQuestions = [
   {
-    question: "Qual a alternativa correta?",
+    question: "O que é COVID-19 e onde ela surgiu?",
     answers: {
-      a: "errada",
-      b: "certa",
-      c: "errada",
+      a: "É uma doença provocada pelo SARS-COV-2. Surgiu em 2019, na China.",
+      b: "É uma doença provocada pelo vírus da Gripe. Surgiu em 2011, na Àfrica do Sul.",
+      c: "É uma doença provocada pelo Aedes Aegypti. Surgiu em 2002, no Brasil.",
+      d: "É uma doença provocada pelo Cachorro. Surgiu em 2005, nos Estados Unidos.",
     },
-    correctAnswer: "b",
+    correctAnswer: "a",
   },
-  {
+  /*   {
     question: "Qual é o maior numero?",
     answers: {
       a: "-30",
@@ -210,7 +211,7 @@ var myQuestions = [
       d: "não me julgue pela lingua ;-;",
     },
     correctAnswer: "a",
-  },
+  }, */
 ];
 
 var quizContainer = document.getElementById("quiz");
@@ -240,25 +241,25 @@ function generateQuiz(
         // Aqui será escrito para html para usar o Radio.
         answers.push(
           "<label>" +
-          '<input type="radio" name="question' +
-          i +
-          '" value="' +
-          letter +
-          '">' +
-          //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
-          questions[i].answers[letter] +
-          "</label>"
+            '<input type="radio" name="question' +
+            i +
+            '" value="' +
+            letter +
+            '">' +
+            //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
+            questions[i].answers[letter] +
+            "</label>"
         );
       }
 
       // add this question and its answers to the output
       output.push(
         '<div class="question">' +
-        questions[i].question +
-        "</div>" +
-        '<div class="answers">' +
-        answers.join("") +
-        "</div>"
+          questions[i].question +
+          "</div>" +
+          '<div class="answers">' +
+          answers.join("") +
+          "</div>"
       );
     }
 
@@ -289,7 +290,9 @@ function generateQuiz(
       }
     }
 
-    resultsContainer.innerHTML = numCorrect + " de " + questions.length;
+    resultsContainer.innerHTML =
+      "Você acertou " + numCorrect + ", de " + questions.length + " questões.";
+
     /*
     Verificar este comando abaixo, para adicionar um laço 'if'
     A ideia é pra fazer com que, se os resultados forem 
