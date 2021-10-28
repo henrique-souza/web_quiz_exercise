@@ -240,25 +240,25 @@ function generateQuiz(
         // Aqui será escrito para html para usar o Radio.
         answers.push(
           "<label>" +
-            '<input type="radio" name="question' +
-            i +
-            '" value="' +
-            letter +
-            '">' +
-            //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
-            questions[i].answers[letter] +
-            "</label>"
+          '<input type="radio" name="question' +
+          i +
+          '" value="' +
+          letter +
+          '">' +
+          //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
+          questions[i].answers[letter] +
+          "</label>"
         );
       }
 
       // add this question and its answers to the output
       output.push(
         '<div class="question">' +
-          questions[i].question +
-          "</div>" +
-          '<div class="answers">' +
-          answers.join("") +
-          "</div>"
+        questions[i].question +
+        "</div>" +
+        '<div class="answers">' +
+        answers.join("") +
+        "</div>"
       );
     }
 
@@ -283,7 +283,7 @@ function generateQuiz(
       if (userAnswer === questions[i].correctAnswer) {
         numCorrect++;
 
-        answerContainers[i].style.color = "lightgreen";
+        answerContainers[i].style.color = "green";
       } else {
         answerContainers[i].style.color = "red";
       }
