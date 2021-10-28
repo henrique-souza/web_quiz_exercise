@@ -20,7 +20,7 @@ var minhasQuestoes = [
     },
     gabarito: "d",
   },
-   {
+  {
     question: "Questão 3 – Como evitar a COVID-19?",
     answers: {
       a: "Ir a uma festa com muitas pessoas num espaço pequeno, sem usar máscara.",
@@ -32,6 +32,66 @@ var minhasQuestoes = [
   },
   {
     question: "Questão 4 - a?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "a",
+  },
+  {
+    question: "Questão 5 - d?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "d",
+  },
+  {
+    question: "Questão 6 - c?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "c",
+  },
+  {
+    question: "Questão 7 - a?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "a",
+  },
+  {
+    question: "Questão 8 - b?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "b",
+  },
+  {
+    question: "Questão 9 - c?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "c",
+  },
+  {
+    question: "Questão 10 - a?",
     answers: {
       a: "a.",
       b: "b.",
@@ -110,13 +170,13 @@ function generateQuiz(
     }
 
     resultsContainer.innerHTML = `Você acertou ${respostaCorreta}, de ${questions.length} questões.`;
-    
+
     /* O comando abaixo joga uma mensagem caso o usuário complete ou não o questionário */
-    /* if (respostaCorreta === 3) {
+    if (respostaCorreta === 10) {
       alert("Parabéns!\n\n Você acertou todas questões!");
     } else {
       alert("Ops!\n\n Você errou pelo menos uma questão.");
-    } */
+    }
   }
 
   // show questions right away

@@ -5,7 +5,7 @@
 }
 
 * {
-  background-color: #778181e0;
+  background-color: #95a5a6;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   text-align: justify;
@@ -63,7 +63,7 @@ img {
 
 /* Botões */
 .jogarNovamente {
-  background-color: rgba(18, 68, 102, 0.863);
+  background-color: #2980b9;
   color: #fff;
   border: var(--default-border);
   border-radius: 3px;
@@ -78,11 +78,11 @@ img {
 }
 
 .jogarNovamente:hover {
-  background-color: rgb(68, 129, 209);
+  background-color: rgba(17, 74, 148, 0.822);
 }
 
 #submit {
-  background-color: rgb(12, 107, 80);
+  background-color: #0c5c2e;
   color: #fff;
   border: var(--default-border);
   border-radius: 3px;
@@ -95,10 +95,10 @@ img {
 }
 
 #submit:hover {
-  background-color: #3a8;
+  background-color: #27ae60;
 }
 .start {
-  background-color: rgb(153, 34, 34);
+  background-color: #c0392b;
   color: #fff;
   border: var(--default-border);
   border-radius: 3px;
@@ -151,6 +151,6 @@ footer {
 }
 
 #quiz {
-  border: 0.5rem solid;
+  border: 0.5rem solid #34495e;
   border-style: outset;
 }
