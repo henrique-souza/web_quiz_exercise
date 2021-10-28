@@ -26,9 +26,10 @@ body {
   border: solid;
 }
 p {
+  display: block;
   text-align: justify;
   font-size: medium;
-  margin: 9px;
+  margin: 2rem;
 }
 
 h1 {
@@ -36,7 +37,7 @@ h1 {
   margin: 0.5em;
 }
 
-footer{
+footer {
   font-size: medium;
   margin: 00.5em;
 }
@@ -149,8 +150,7 @@ footer {
   display: block;
 }
 
-#quiz{
+#quiz {
   border: 0.5rem solid;
   border-style: outset;
-  
 }
