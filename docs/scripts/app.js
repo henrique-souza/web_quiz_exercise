@@ -51,8 +51,7 @@ function generateQuiz(
         // Aqui será escrito para html para usar o Radio.
         answers.push(
           `<label><input type="radio" name="question${respostas}" value="${letter}">${letter}) `, //vou deixar a letra comentada, porque achei melhor assim
-            questions[respostas].answers[letter] +
-            "</label>"
+          questions[respostas].answers[letter] + "</label>"
         );
       }
 
@@ -100,7 +99,7 @@ function generateQuiz(
       ", de " +
       questions.length +
       " questões.";
-      /* O comando abaixo joga uma mensagem caso o usuário complete ou não o questionário */
+    /* O comando abaixo joga uma mensagem caso o usuário complete ou não o questionário */
     if (respostaCorreta === 2) {
       alert("Parabéns!\n\n Você acertou todas questões!");
     } else {
