@@ -1,20 +1,8 @@
-/* var myQuestions = [
-  {
-    question: "O que é COVID-19 e onde ela surgiu?",
-    a:
-      "É uma doença provocada pelo SARS-COV-2. Surgiu em 2019, na China.",
-    b:
-      "É uma doença provocada pelo vírus da Gripe. Surgiu em 2011, na Àfrica do Sul.",
-    c:
-      "É uma doença provocada pelo Aedes Aegypti. Surgiu em 2002, no Brasil.",
-    d:
-      "É uma doença provocada pelo Cachorro. Surgiu em 2005, nos Estados Unidos.",
-    correctAnswer: 1,
-  },
   /*   {
       questao2:
         "Como o Coronavírus é transmitido?",
 */
+
 var myQuestions = [
   {
     question: "Questão 1 - O que é COVID-19 e onde ela surgiu?",
@@ -26,26 +14,6 @@ var myQuestions = [
     },
     correctAnswer: "a",
   },
-  /*   {
-    question: "Qual é o maior numero?",
-    answers: {
-      a: "-30",
-      b: "5",
-      c: "10",
-      d: "9",
-    },
-    correctAnswer: "c",
-  },
-  {
-    question: "Nada",
-    answers: {
-      a: "musica",
-      b: "filme",
-      c: "da like",
-      d: "não me julgue pela lingua ;-;",
-    },
-    correctAnswer: "a",
-  }, */
 ];
 
 var quizContainer = document.getElementById("quiz");
