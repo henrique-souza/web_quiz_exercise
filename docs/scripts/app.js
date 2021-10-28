@@ -1,4 +1,4 @@
-/*  */
+/* Armazenando as questões sobre COVID-19. Serão chamadas abaixo. */
 var minhasQuestoes = [
   {
     question: "Questão 1 - O que é COVID-19 e onde ela surgiu?",
@@ -8,17 +8,17 @@ var minhasQuestoes = [
       c: "É uma doença provocada pelo Aedes Aegypti. Surgiu em 2002, no Brasil.",
       d: "É uma doença provocada pelo Cachorro. Surgiu em 2005, nos Estados Unidos.",
     },
-    correctAnswer: "a",
+    gabarito: "a",
   },
   {
     question: "Questão 2 - Como o Coronavírus é transmitido?",
     answers: {
-      a: "É uma doença provocada pelo SARS-COV-2. Surgiu em 2019, na China.",
-      b: "É uma doença provocada pelo vírus da Gripe. Surgiu em 2011, na Àfrica do Sul.",
-      c: "É uma doença provocada pelo Aedes Aegypti. Surgiu em 2002, no Brasil.",
-      d: "É uma doença provocada pelo Cachorro. Surgiu em 2005, nos Estados Unidos.",
+      a: "Pelo sangue da pessoa infectada.",
+      b: "Quando o infectado expelir partículas sudoreicas no ambiente.",
+      c: "Ao comprar alimentos no supermercado.",
+      d: "Pelas partículas virais do coronavírus no ambiente, em contato com a boca ou olhos do não-infectado.",
     },
-    correctAnswer: "d",
+    gabarito: "d",
   },
 ];
 
@@ -40,34 +40,30 @@ function generateQuiz(
     var answers; // poderia ter dado outro nome, alem do mais, eu mesmo me confundi :/
 
     // para cada questão
-    for (var i = 0; i < questions.length; i++) {
+    for (var respostas = 0; respostas < questions.length; respostas++) {
       // mas, primeiro resetamos a lista de questões
       answers = [];
 
+      /* letter = ["a", "b", "c", "d"]; */
+
       // e aqui faremos para cada resposta na questão.
-      for (letter in questions[i].answers) {
+      for (letter in questions[respostas].answers) {
         // Aqui será escrito para html para usar o Radio.
         answers.push(
-          "<label>" +
-          '<input type="radio" name="question' +
-          i +
-          '" value="' +
-          letter +
-          '">' +
-          //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
-          questions[i].answers[letter] +
-          "</label>"
+          `<label><input type="radio" name="question${respostas}" value="${letter}">${letter}) `, //vou deixar a letra comentada, porque achei melhor assim
+            questions[respostas].answers[letter] +
+            "</label>"
         );
       }
 
       // add this question and its answers to the output
       output.push(
         '<div class="question">' +
-        questions[i].question +
-        "</div>" +
-        '<div class="answers">' +
-        answers.join("") +
-        "</div>"
+          questions[respostas].question +
+          "</div>" +
+          '<div class="answers">' +
+          answers.join("") +
+          "</div>"
       );
     }
 
@@ -78,37 +74,38 @@ function generateQuiz(
   function showResults(questions, quizContainer, resultsContainer) {
     var answerContainers = quizContainer.querySelectorAll(".answers");
 
-    var userAnswer = "";
-    var numCorrect = 0;
+    var respostaDoUsuario = "";
+    var respostaCorreta = 0;
 
-    for (var i = 0; i < questions.length; i++) {
+    for (var respostas = 0; respostas < questions.length; respostas++) {
       // agora ele vai virar a letra que esta marcada.
-      userAnswer = (
-        answerContainers[i].querySelector(
-          "input[name=question" + i + "]:checked"
+      respostaDoUsuario = (
+        answerContainers[respostas].querySelector(
+          "input[name=question" + respostas + "]:checked"
         ) || {}
       ).value;
 
-      if (userAnswer === questions[i].correctAnswer) {
-        numCorrect++;
+      if (respostaDoUsuario === questions[respostas].gabarito) {
+        respostaCorreta++;
 
-        answerContainers[i].style.color = "lightgreen";
+        answerContainers[respostas].style.color = "lightgreen";
       } else {
-        answerContainers[i].style.color = "red";
+        answerContainers[respostas].style.color = "red";
       }
     }
 
     resultsContainer.innerHTML =
-      "Você acertou " + numCorrect + ", de " + questions.length + " questões.";
-
-    /*
-    Verificar este comando abaixo, para adicionar um laço 'if'
-    A ideia é pra fazer com que, se os resultados forem 
-    menores que 10, apareça na tela uma mensagem dizendo
-    para o usuário tentar novamente
-    Caso contrário, irá aparecer um "Você sabe tudo sobre COVID-19!"
-     alert(resultsContainer.innerHTML) 
-     */
+      "Você acertou " +
+      respostaCorreta +
+      ", de " +
+      questions.length +
+      " questões.";
+      /* O comando abaixo joga uma mensagem caso o usuário complete ou não o questionário */
+    if (respostaCorreta === 2) {
+      alert("Parabéns!\n\n Você acertou todas questões!");
+    } else {
+      alert("Ops!\n\n Você errou pelo menos uma questão.");
+    }
   }
 
   // show questions right away
