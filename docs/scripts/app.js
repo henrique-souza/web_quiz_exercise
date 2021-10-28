@@ -1,9 +1,5 @@
-  /*   {
-      questao2:
-        "Como o Coronavírus é transmitido?",
-*/
-
-var myQuestions = [
+/*  */
+var minhasQuestoes = [
   {
     question: "Questão 1 - O que é COVID-19 e onde ela surgiu?",
     answers: {
@@ -14,13 +10,23 @@ var myQuestions = [
     },
     correctAnswer: "a",
   },
+  {
+    question: "Questão 2 - Como o Coronavírus é transmitido?",
+    answers: {
+      a: "É uma doença provocada pelo SARS-COV-2. Surgiu em 2019, na China.",
+      b: "É uma doença provocada pelo vírus da Gripe. Surgiu em 2011, na Àfrica do Sul.",
+      c: "É uma doença provocada pelo Aedes Aegypti. Surgiu em 2002, no Brasil.",
+      d: "É uma doença provocada pelo Cachorro. Surgiu em 2005, nos Estados Unidos.",
+    },
+    correctAnswer: "d",
+  },
 ];
 
 var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+generateQuiz(minhasQuestoes, quizContainer, resultsContainer, submitButton);
 
 function generateQuiz(
   questions,
@@ -43,25 +49,25 @@ function generateQuiz(
         // Aqui será escrito para html para usar o Radio.
         answers.push(
           "<label>" +
-            '<input type="radio" name="question' +
-            i +
-            '" value="' +
-            letter +
-            '">' +
-            //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
-            questions[i].answers[letter] +
-            "</label>"
+          '<input type="radio" name="question' +
+          i +
+          '" value="' +
+          letter +
+          '">' +
+          //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
+          questions[i].answers[letter] +
+          "</label>"
         );
       }
 
       // add this question and its answers to the output
       output.push(
         '<div class="question">' +
-          questions[i].question +
-          "</div>" +
-          '<div class="answers">' +
-          answers.join("") +
-          "</div>"
+        questions[i].question +
+        "</div>" +
+        '<div class="answers">' +
+        answers.join("") +
+        "</div>"
       );
     }
 
