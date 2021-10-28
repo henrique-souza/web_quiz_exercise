@@ -1,17 +1,18 @@
 /* Principais */
 :root {
   --default-margin: auto;
+  --default-border: auto;
 }
 
 * {
   font-style: var(--CorDeFonte);
-  background-color: #522b2bc7;
+  background-color: #778181e0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  text-align: justify;
 }
 
 html {
-  display: block;
   margin-block-start: var(--default-margin);
   margin-block-end: var(--default-margin);
   height: 294.969px;
@@ -20,58 +21,71 @@ html {
   margin-right: var(--default-margin);
 }
 
+body {
+  margin-left: var(--default-margin);
+  margin-right: var(--default-margin);
+}
+p {
+  text-align: justify;
+  font-size: medium;
+  margin-bottom: 2em;
+}
+
+h1 {
+  font-size: xx-large;
+  margin-right: var(--default-margin);
+}
+
+#results {
+  margin-bottom: 20px;
+}
+
 /* Imagens */
 img {
   height: 294.969px;
   width: 492px;
+  margin: auto;
+  display: flex;
+  margin-left: var(--default-margin);
+  margin-right: var(--default-margin);
 }
-
-/* Botões */
-
 .homePicture {
   display: flex;
   margin-left: var(--default-margin);
   margin-right: var(--default-margin);
 }
 
-button {
+/* Botões */
+.jogarNovamente {
+  background-color: rgba(18, 68, 102, 0.863);
   color: #fff;
-  border: 0px;
+  border: var(--default-border);
   border-radius: 3px;
   padding: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
+  display: inline-block;
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  text-decoration: none;
 }
 
-body {
-  margin-left: var(--default-margin);
-  margin-right: var(--default-margin);
-}
-
-.question {
-  font-weight: 600;
-}
-
-.answers {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-}
-
-input {
-  cursor: pointer;
+.jogarNovamente:hover {
+  background-color: rgb(68, 129, 209);
 }
 
 #submit {
-  background-color: #297;
+  background-color: rgb(12, 107, 80);
   color: #fff;
-  border: 0px;
+  border: var(--default-border);
   border-radius: 3px;
   padding: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
 }
 
 #submit:hover {
@@ -80,39 +94,45 @@ input {
 .start {
   background-color: rgb(153, 34, 34);
   color: #fff;
-  border: 0px;
+  border: var(--default-border);
   border-radius: 3px;
   padding: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
   text-decoration: none;
-  /* padding-bottom: 5%; */
-  /* display: flex; */
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-left: 14em;
 }
 
 .start:hover {
   background-color: red;
 }
 
-.jogarNovamente {
-  background-color: rgba(18, 68, 102, 0.863);
-  color: #fff;
-  border: 0px;
-  border-radius: 3px;
-  padding: 20px;
+/* Questionário */
+
+.question {
+  font-weight: 600;
+  font-size: x-large;
+  margin: 10px;
+}
+
+.answers {
+  margin: 20px;
+}
+
+label {
+  display: inline-block;
+  font-size: medium;
+  margin: 9px;
+}
+
+input {
   cursor: pointer;
-  margin-bottom: 20px;
-  text-decoration: none;
-  /* display: flex; */
 }
 
-.jogarNovamente:hover {
-  background-color: rgb(56, 106, 172);
-}
-
-div#home {
-  height: 294.969px;
-  width: 700px;
+#home {
+  height: 60px;
 }
 
 footer {
