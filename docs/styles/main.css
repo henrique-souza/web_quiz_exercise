@@ -145,6 +145,21 @@ body {
   display: flex;
 }
 
+.jogarNovamente {
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: rgba(66, 78, 189, 0.822);
+  color: #fff;
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-decoration: none;
+  padding-bottom: 5%;
+  display: flex;
+}
+
 div#home {
   height: 294.969px;
   width: 700px;

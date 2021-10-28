@@ -290,6 +290,14 @@ function generateQuiz(
     }
 
     resultsContainer.innerHTML = numCorrect + " de " + questions.length;
+    /*
+    Verificar este comando abaixo, para adicionar um laço 'if'
+    A ideia é pra fazer com que, se os resultados forem 
+    menores que 10, apareça na tela uma mensagem dizendo
+    para o usuário tentar novamente
+    Caso contrário, irá aparecer um "Você sabe tudo sobre COVID-19!"
+     alert(resultsContainer.innerHTML) 
+     */
   }
 
   // show questions right away
