@@ -20,6 +20,26 @@ var minhasQuestoes = [
     },
     gabarito: "d",
   },
+   {
+    question: "Questão 3 – Como evitar a COVID-19?",
+    answers: {
+      a: "Ir a uma festa com muitas pessoas num espaço pequeno, sem usar máscara.",
+      b: "Distanciamento, uso de máscaras, lavar as mãos, evitar ambientes fechados e aglomerações.",
+      c: "Beber álcool em gel antes de entrar num ônibus lotado.",
+      d: "Lavar as mãos apenas aos Domingos.",
+    },
+    gabarito: "b",
+  },
+  {
+    question: "Questão 4 - a?",
+    answers: {
+      a: "a.",
+      b: "b.",
+      c: "c.",
+      d: "d.",
+    },
+    gabarito: "a",
+  },
 ];
 
 var quizContainer = document.getElementById("quiz");
@@ -37,32 +57,28 @@ function generateQuiz(
   function showQuestions(questions, quizContainer) {
     // precisaremos de um lugar para armazenar a saída e as opções de resposta
     var output = [];
-    var answers; // poderia ter dado outro nome, alem do mais, eu mesmo me confundi :/
+    // poderia ter dado outro nome, alem do mais, eu mesmo me confundi :/
 
+    var answers;
     // para cada questão
     for (var respostas = 0; respostas < questions.length; respostas++) {
       // mas, primeiro resetamos a lista de questões
       answers = [];
 
-      /* letter = ["a", "b", "c", "d"]; */
-
       // e aqui faremos para cada resposta na questão.
-      for (letter in questions[respostas].answers) {
-        // Aqui será escrito para html para usar o Radio.
+      for (letras in questions[respostas].answers) {
+        // Aqui será escrito para html para usar o checkbox.
         answers.push(
-          `<label><input type="radio" name="question${respostas}" value="${letter}">${letter}) `, //vou deixar a letra comentada, porque achei melhor assim
-          questions[respostas].answers[letter] + "</label>"
+          `<label><input type="radio" name="question${respostas}" value="${letras}">${letras}) `,
+          questions[respostas].answers[letras] + "</label>"
         );
       }
 
       // add this question and its answers to the output
       output.push(
-        '<div class="question">' +
-          questions[respostas].question +
-          "</div>" +
-          '<div class="answers">' +
-          answers.join("") +
-          "</div>"
+        `<div class="question">${
+          questions[respostas].question
+        }</div><div class="answers">${answers.join("")}</div>`
       );
     }
 
@@ -80,7 +96,7 @@ function generateQuiz(
       // agora ele vai virar a letra que esta marcada.
       respostaDoUsuario = (
         answerContainers[respostas].querySelector(
-          "input[name=question" + respostas + "]:checked"
+          `input[name=question${respostas}]:checked`
         ) || {}
       ).value;
 
@@ -93,18 +109,14 @@ function generateQuiz(
       }
     }
 
-    resultsContainer.innerHTML =
-      "Você acertou " +
-      respostaCorreta +
-      ", de " +
-      questions.length +
-      " questões.";
+    resultsContainer.innerHTML = `Você acertou ${respostaCorreta}, de ${questions.length} questões.`;
+    
     /* O comando abaixo joga uma mensagem caso o usuário complete ou não o questionário */
-    if (respostaCorreta === 2) {
+    /* if (respostaCorreta === 3) {
       alert("Parabéns!\n\n Você acertou todas questões!");
     } else {
       alert("Ops!\n\n Você errou pelo menos uma questão.");
-    }
+    } */
   }
 
   // show questions right away
