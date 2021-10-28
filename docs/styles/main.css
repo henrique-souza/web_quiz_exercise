@@ -23,16 +23,22 @@ html {
 body {
   margin-left: var(--default-margin);
   margin-right: var(--default-margin);
+  border: solid;
 }
 p {
   text-align: justify;
   font-size: medium;
-  margin-bottom: 2em;
+  margin: 9px;
 }
 
 h1 {
   font-size: xx-large;
-  margin-right: var(--default-margin);
+  margin: 0.5em;
+}
+
+footer{
+  font-size: medium;
+  margin: 00.5em;
 }
 
 #results {
@@ -141,4 +147,10 @@ footer {
 
 #results {
   display: block;
+}
+
+#quiz{
+  border: 0.5rem solid;
+  border-style: outset;
+  
 }
