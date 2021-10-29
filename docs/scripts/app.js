@@ -19,8 +19,8 @@ var minhasQuestoes = [
       d: "Pelas partículas virais do coronavírus no ambiente, em contato com a boca ou olhos do não-infectado.",
     },
     gabarito: "d",
-  },
-  {
+  },  
+   {
     question: "Questão 3 – Como evitar a COVID-19?",
     answers: {
       a: "Ir a uma festa com muitas pessoas num espaço pequeno, sem usar máscara.",
@@ -129,7 +129,7 @@ function generateQuiz(
       for (letras in questions[respostas].answers) {
         // Aqui será escrito para html para usar o checkbox.
         answers.push(
-          `<label><input type="radio" name="question${respostas}" value="${letras}">${letras}) `,
+          `<label><input type="radio" name="question${respostas}" value="${letras}"> `, 
           questions[respostas].answers[letras] + "</label>"
         );
       }
@@ -170,7 +170,7 @@ function generateQuiz(
     }
 
     resultsContainer.innerHTML = `Você acertou ${respostaCorreta}, de ${questions.length} questões.`;
-
+    
     /* O comando abaixo joga uma mensagem caso o usuário complete ou não o questionário */
     if (respostaCorreta === 10) {
       alert("Parabéns!\n\n Você acertou todas questões!");
