@@ -31,7 +31,7 @@ var minhasQuestoes = [
     gabarito: "b",
   },
   {
-    question: "Questão 4 - a?",
+    question: "Questão 4 - Qual máscara devo usar para me proteger?",
     answers: {
       a: "a.",
       b: "b.",
@@ -121,23 +121,23 @@ function generateQuiz(
 
     var answers;
     // para cada questão
-    for (var respostas = 0; respostas < questions.length; respostas++) {
+    for (var escolhaDoUsuario = 0; escolhaDoUsuario < questions.length; escolhaDoUsuario++) {
       // mas, primeiro resetamos a lista de questões
       answers = [];
 
       // e aqui faremos para cada resposta na questão.
-      for (letras in questions[respostas].answers) {
+      for (letras in questions[escolhaDoUsuario].answers) {
         // Aqui será escrito para html para usar o checkbox.
         answers.push(
-          `<label><input type="radio" name="question${respostas}" value="${letras}"> `, 
-          questions[respostas].answers[letras] + "</label>"
+          `<label><input type="radio" name="question${escolhaDoUsuario}" value="${letras}"> `, 
+          questions[escolhaDoUsuario].answers[letras] + "</label>"
         );
       }
 
       // add this question and its answers to the output
       output.push(
         `<div class="question">${
-          questions[respostas].question
+          questions[escolhaDoUsuario].question
         }</div><div class="answers">${answers.join("")}</div>`
       );
     }
@@ -152,20 +152,20 @@ function generateQuiz(
     var respostaDoUsuario = "";
     var respostaCorreta = 0;
 
-    for (var respostas = 0; respostas < questions.length; respostas++) {
+    for (var escolhaDoUsuario = 0; escolhaDoUsuario < questions.length; escolhaDoUsuario++) {
       // agora ele vai virar a letra que esta marcada.
       respostaDoUsuario = (
-        answerContainers[respostas].querySelector(
-          `input[name=question${respostas}]:checked`
+        answerContainers[escolhaDoUsuario].querySelector(
+          `input[name=question${escolhaDoUsuario}]:checked`
         ) || {}
       ).value;
 
-      if (respostaDoUsuario === questions[respostas].gabarito) {
+      if (respostaDoUsuario === questions[escolhaDoUsuario].gabarito) {
         respostaCorreta++;
 
-        answerContainers[respostas].style.color = "lightgreen";
+        answerContainers[escolhaDoUsuario].style.color = "lightgreen";
       } else {
-        answerContainers[respostas].style.color = "red";
+        answerContainers[escolhaDoUsuario].style.color = "red";
       }
     }
 
