@@ -244,7 +244,40 @@ const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 
-function buildQuiz() { }
+function buildQuiz() {
+  //variável que armazena as saídas em HTML
+  const output = [];
+
+  // para cada Questão:
+  myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
+
+      //variavel que armazena as possíveis listas de respostas do usuário
+      const answers = [];
+
+      // adicionando um laço de for para avaliar as respostas do usuário
+      for (letter in currentQuestion.answers) {
+
+        // chamando os botões 'radio' para o HTML
+        // os botões que ficam ao lado das questões
+        answers.push(
+          `<label>
+          <input type="radio" name="question${questionNumber}" value="${letter}">
+          ${letter} : 
+          ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+      // adicionando questões aos slides do quiz
+      output.push(
+        `<div class="question"> ${currentQuestion.question} </div>
+        <div class="answer"> ${answers.join('')} </div>`
+      );
+    }
+  );
+  // chamando o output para transformar tudo na pagina HTML
+  quizContainer.innerHTML = output.join('');
+}
 
 function showResults() { }
 
