@@ -253,7 +253,7 @@ function buildQuiz() {
 
       // adicionando um laço de for para avaliar as respostas do usuário
       for (letter in currentQuestion.answers) {
-        
+
         // chamando os botões 'radio' para o HTML
         // os botões que ficam ao lado das questões
         answers.push(
@@ -275,7 +275,39 @@ function buildQuiz() {
   quizContainer.innerHTML = output.join('');
 }
 
-function showResults() { }
+function showResults() {
+
+  // pegando as respostas do usuário do Quiz
+  const answerContainers = quizContainer.querySelectorAll('.answer');
+
+  // acompanhando as respostas dos usuários
+  let numberCorrect = 0;
+
+  // para cada questão...
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+
+    // buscando a resposta selecionada
+    const answerContainers = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainers.querySelector(selector) || {}).value;
+
+    // se a resposta for correta...
+    if (userAnswer === currentQuestion.correctAnswer) {
+      // armazenar os números de respostas corretas
+      numberCorrect++;
+
+      //colorindo a respostas de verde
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    }
+    // se for errada ou estiver em branco... 
+    else {
+      // colorindo as respostas de vermelho
+      answerContainers[questionNumber].style.color = 'red';
+    }
+  });
+  // mostrando o numero de respostas corretas em relação ao total
+  resultsContainer.innerHTML = `Você acertou ${numberCorrect}, de ${myQuestions.length} questões.`;
+}
 
 // Variáveis
 const quizContainer = document.getElementById('quiz');
