@@ -267,7 +267,7 @@ function buildQuiz() {
       // adicionando questões aos slides do quiz
       output.push(
         `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answer"> ${answers.join('')} </div>`
+        <div class="answers"> ${answers.join('')} </div>`
       );
     }
   );
@@ -278,35 +278,36 @@ function buildQuiz() {
 function showResults() {
 
   // pegando as respostas do usuário do Quiz
-  const answerContainers = quizContainer.querySelectorAll('.answer');
+  const answerContainers = quizContainer.querySelectorAll('.answers');
 
   // acompanhando as respostas dos usuários
   let numberCorrect = 0;
 
   // para cada questão...
-  myQuestions.forEach((currentQuestion, questionNumber) => {
+  myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
 
-    // buscando a resposta selecionada
-    const answerContainers = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainers.querySelector(selector) || {}).value;
+      // buscando a resposta selecionada
+      const answerContainers = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainers.querySelector(selector) || {}).value;
 
-    // se a resposta for correta...
-    if (userAnswer === currentQuestion.correctAnswer) {
-      // armazenar os números de respostas corretas
-      numberCorrect++;
+      // se a resposta for correta...
+      if (userAnswer === currentQuestion.correctAnswer) {
+        // armazenar os números de respostas corretas
+        numberCorrect++;
 
-      //colorindo a respostas de verde
-      answerContainers[questionNumber].style.color = 'lightgreen';
-    }
-    // se for errada ou estiver em branco... 
-    else {
-      // colorindo as respostas de vermelho
-      answerContainers[questionNumber].style.color = 'red';
-    }
-  });
+        //colorindo a respostas de verde
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // se for errada ou estiver em branco... 
+      else {
+        // colorindo as respostas de vermelho
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
   // mostrando o numero de respostas corretas em relação ao total
-  resultsContainer.innerHTML = `Você acertou ${numberCorrect}, de ${myQuestions.length} questões.`;
+  resultsContainer.innerHTML = `Você acertou ${numberCorrect}, de ${myQuestions.length} questões`;
 }
 
 // Variáveis
@@ -335,7 +336,7 @@ const myQuestions = [
     },
     correctAnswer: "d"
   },
-];
+]
 
 
 // exibindo o Quiz
