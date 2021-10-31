@@ -385,3 +385,5 @@ showSlide(currentSlide);
 
 // mostrando os resultados ao usuário
 submitButton.addEventListener('click', showResults);
+previousButton.addEventListener('click', showPreviousSlide);
+nextButton.addEventListener('click', showNextSlide);
