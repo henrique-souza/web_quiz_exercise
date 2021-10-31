@@ -259,15 +259,16 @@ function buildQuiz() {
         answers.push(
           `<label>
           <input type="radio" name="question${questionNumber}" value="${letter}">
-          ${letter} : 
           ${currentQuestion.answers[letter]}
           </label>`
         );
       }
       // adicionando questões aos slides do quiz
       output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join('')} </div>`
+        `<div class="slide">
+        <div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join('')} </div>
+      </div>`
       );
     }
   );
@@ -288,9 +289,9 @@ function showResults() {
     (currentQuestion, questionNumber) => {
 
       // buscando a resposta selecionada
-      const answerContainers = answerContainers[questionNumber];
+      const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainers.querySelector(selector) || {}).value;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
       // se a resposta for correta...
       if (userAnswer === currentQuestion.correctAnswer) {
@@ -308,6 +309,37 @@ function showResults() {
     });
   // mostrando o numero de respostas corretas em relação ao total
   resultsContainer.innerHTML = `Você acertou ${numberCorrect}, de ${myQuestions.length} questões`;
+}
+
+function showSlide(qualquer) {
+
+  slides[currentSlide].classList.remove('active-slide');
+  slides[qualquer].classList.add('active-slide');
+  currentSlide = qualquer;
+
+  if (currentSlide === 0) {
+    previousButton.style.display = 'none';
+  }
+  else {
+    previousButton.style.display = 'inline-block';
+  }
+
+  if (currentSlide === slides.length - 1) {
+    nextButton.style.display = 'none';
+    submitButton.style.display = 'inline-block';
+  }
+  else {
+    nextButton.style.display = 'inline-block';
+    submitButton.style.display = 'none';
+  }
+}
+
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
 }
 
 // Variáveis
@@ -342,5 +374,14 @@ const myQuestions = [
 // exibindo o Quiz
 buildQuiz();
 
-// mostrando os resultados
+// Paginação
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+// Mostrando slides
+showSlide(currentSlide);
+
+// mostrando os resultados ao usuário
 submitButton.addEventListener('click', showResults);
