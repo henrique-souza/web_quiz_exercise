@@ -21,9 +21,7 @@ html {
 }
 
 body {
-  margin-left: var(--default-margin);
-  margin-right: var(--default-margin);
-  border: solid;
+  display: flexbox;
 }
 
 p {
@@ -54,7 +52,7 @@ footer {
 .slide {
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: -36px;
   width: 100%;
   z-index: 1;
   opacity: 0;
@@ -64,6 +62,8 @@ footer {
 .active-slide {
   opacity: 1;
   z-index: 2;
+  border: 0.5rem solid #34495e;
+  border-style: outset;
 }
 
 .quiz-container {
@@ -89,20 +89,42 @@ img {
 }
 
 /* Botões */
-button {
-  font-family: "Work Sans", sans-serif;
-  font-size: 22px;
-  background-color: #279;
+#next {
+  background-color: #2980b9;
   color: #fff;
-  border: 0px;
-  border-radius: 3px;
+  border: var(--default-border);
+  border-radius: 30px;
   padding: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
+  display: inline-block;
+  margin-top: 3em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  text-decoration: none;
 }
 
-button:hover {
-  background-color: #38a;
+#next:hover {
+  background-color: rgba(17, 74, 148, 0.822);
+}
+
+#previous {
+  background-color: #2980b9;
+  color: #fff;
+  border: var(--default-border);
+  border-radius: 30px;
+  padding: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 3em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  text-decoration: none;
+}
+
+#previous:hover {
+  background-color: rgba(17, 74, 148, 0.822);
 }
 
 .jogarNovamente {
@@ -192,9 +214,4 @@ footer {
 
 #results {
   display: block;
-}
-
-#quiz {
-  border: 0.5rem solid #34495e;
-  border-style: outset;
 }
