@@ -23,8 +23,7 @@
 //   {
 //     question: "Questão 3 – Como evitar a COVID-19?",
 //     answers: {
-//       a: "Ir a uma festa com muitas pessoas num espaço pequeno, sem usar máscara.",
-//       b: "Distanciamento, uso de máscaras, lavar as mãos, evitar ambientes fechados e aglomerações.",
+//       a: "Ir a uma festa com muitas pessoas num espaço pequeno, sem usar máscara.", máscaras, lavar as mãos, evitar ambientes fechados e aglomerações.",
 //       c: "Beber álcool em gel antes de entrar num ônibus lotado.",
 //       d: "Lavar as mãos apenas aos Domingos.",
 //     },
@@ -240,10 +239,7 @@
 // TENTATIVA DE DEIXAR O PROGRAMA MAIS LEGÍVEL 
 // COM BASE EM ESTUDOS DE OUTROS ALGORITMOS PARA O MESMO OBJETIVO 
 
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
-
+// Funções
 function buildQuiz() {
   //variável que armazena as saídas em HTML
   const output = [];
@@ -257,7 +253,7 @@ function buildQuiz() {
 
       // adicionando um laço de for para avaliar as respostas do usuário
       for (letter in currentQuestion.answers) {
-
+        
         // chamando os botões 'radio' para o HTML
         // os botões que ficam ao lado das questões
         answers.push(
@@ -281,12 +277,10 @@ function buildQuiz() {
 
 function showResults() { }
 
-// exibindo o Quiz
-buildQuiz();
-
-// mostrando os resultados
-submitButton.addEventListener('click', showResults);
-
+// Variáveis
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
 // armazenando o quiz
 const myQuestions = [
   {
@@ -311,3 +305,9 @@ const myQuestions = [
   },
 ]
 
+
+// exibindo o Quiz
+buildQuiz();
+
+// mostrando os resultados
+submitButton.addEventListener('click', showResults);
