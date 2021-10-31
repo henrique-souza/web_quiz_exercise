@@ -335,7 +335,7 @@ const myQuestions = [
     },
     correctAnswer: "d"
   },
-]
+];
 
 
 // exibindo o Quiz

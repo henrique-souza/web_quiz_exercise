@@ -10,7 +10,7 @@
   font-size: 20px;
   text-align: justify;
 }
- Z,
+
 html {
   margin-block-start: var(--default-margin);
   margin-block-end: var(--default-margin);
@@ -25,6 +25,7 @@ body {
   margin-right: var(--default-margin);
   border: solid;
 }
+
 p {
   display: block;
   text-align: justify;
@@ -49,26 +50,6 @@ footer {
 .container {
   margin-bottom: 5%;
 }
-/* Botões - Controles de Slides */
-.slide{
-  /*position: absolute; */
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.active-slide{
-  opacity: 1;
-  z-index: 2;
-}
-.quiz-container{
-  /* 
-  position: relative; */
-  height: 200px;
-  margin-top: 40px;
-}
 
 /* Imagens */
 img {
@@ -79,6 +60,7 @@ img {
   margin-left: var(--default-margin);
   margin-right: var(--default-margin);
 }
+
 .homePicture {
   display: flex;
   margin-left: var(--default-margin);
@@ -121,6 +103,7 @@ img {
 #submit:hover {
   background-color: #27ae60;
 }
+
 .start {
   background-color: #c0392b;
   color: #fff;
@@ -138,6 +121,28 @@ img {
 .start:hover {
   background-color: red;
 }
+
+/* Botões - Controles de Slides
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+
+.quiz-container {
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+} */
 
 /* Questionário */
 
