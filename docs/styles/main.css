@@ -21,19 +21,22 @@ html {
 }
 
 body {
-  display: flexbox;
+  display: block;
 }
 
 p {
   display: block;
   text-align: justify;
   font-size: medium;
-  margin: 2rem;
+  margin-bottom: 50px;
+  margin-top: 30px;
 }
 
 h1 {
   font-size: xx-large;
   margin: 0.5em;
+  height: 50px;
+  width: 700px;
 }
 
 footer {
