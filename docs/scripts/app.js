@@ -168,7 +168,7 @@ const myQuestions = [
     correctAnswer: "b",
   },
   {
-    question: "Questão 7 - Qual a única forma de prevenção contra o SARS-CoV-2?",
+    question: "Questão 7 - Qual a única forma de prevenção EFICAZ contra o SARS-CoV-2?",
     answers: {
       a: "Uso de Cloroquina",
       b: "Ozonoterapia",
