@@ -1,5 +1,5 @@
-/* Principais */
-:root {
+/* /* Principais */
+/*:root {
   --default-margin: auto;
   --default-border: auto;
 }
@@ -17,7 +17,8 @@ html {
 }
 
 body {
-  display: inline;
+  display: block;
+  align-items: center;
 }
 
 p {
@@ -45,7 +46,7 @@ footer {
   margin-bottom: 5%;
 } */
 
-.slide {
+/*.slide {
   position: absolute;
   left: auto;
   top: auto;
@@ -72,7 +73,7 @@ footer {
 }
 
 /* Imagens */
-img {
+/*img {
   height: 294.969px;
   width: 492px;
   margin: auto;
@@ -88,7 +89,7 @@ img {
 }
 
 /* Botões */
-#next {
+/*#next {
   background-color: #e67e22;
   color: #fff;
   border: var(--default-border);
@@ -97,7 +98,7 @@ img {
   cursor: pointer;
   display: inline-block; /* 
   margin-top: 11.5em; */
-  margin-top: 14.5em;
+/*margin-top: 14.5em;
   margin-right: 2em;
   margin-bottom: 2em;
   margin-left: 2em;
@@ -181,7 +182,7 @@ img {
 
 /* Questionário */
 
-.question {
+/*.question {
   font-weight: 300;
   font-size: x-large;
   margin: 10px;
@@ -190,14 +191,14 @@ img {
 .answers {
   height: 12px; /* 
   margin: 20px; */
-}
+/*}
 
 label {
   display: inline-block;
   font-size: medium; /* 
   margin-right: 5px;
   margin-bottom: 10px; */
-  cursor: pointer;
+/*cursor: pointer;
   width: 600px;
   height: 0px;
   border: solid;
@@ -212,10 +213,45 @@ input {
   height: 60px;
 } */
 
-footer {
+/*footer {
   display: block;
 }
 
 #results {
   display: block;
+}
+ */
+
+*{
+  background-color: grey;
+  margin: auto;
+}
+
+main {
+  display: grid;
+}
+
+.answers, label{
+  display: block;
+}
+
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+
+.quiz-container {
+  position: relative;
+  height: 100px;
+  margin-top: 40px;
 }
