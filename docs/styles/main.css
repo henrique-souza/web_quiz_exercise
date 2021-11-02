@@ -12,31 +12,23 @@
 }
 
 html {
-  margin-block-start: var(--default-margin);
-  margin-block-end: var(--default-margin);
-  height: 294.969px;
-  width: 700px;
-  margin-left: var(--default-margin);
-  margin-right: var(--default-margin);
+  margin: 5%;
 }
 
 body {
-  display: block;
+  display: inline;
 }
 
 p {
   display: block;
   text-align: justify;
   font-size: medium;
-  margin-bottom: 50px;
-  margin-top: 30px;
+  margin-top: 00.5em;
 }
 
 h1 {
   font-size: xx-large;
   margin: 0.5em;
-  height: 50px;
-  width: 700px;
 }
 
 footer {
@@ -48,31 +40,32 @@ footer {
   margin-bottom: 20px;
 }
 
-.container {
+/* .container {
   margin-bottom: 5%;
-}
+} */
 
 .slide {
   position: absolute;
-  left: 0px;
-  top: -36px;
-  width: 100%;
+  left: auto;
+  top: auto;
+  width: auto;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s;
 }
 
 .active-slide {
+  position: absolute;
   opacity: 1;
   z-index: 2;
   border: 0.5rem solid #34495e;
   border-style: outset;
+  margin: 2rem;
 }
 
 .quiz-container {
-  position: relative;
-  height: 200px;
-  margin-top: 40px;
+  margin-top: 4px;
+  display: inline;
 }
 
 /* Imagens */
@@ -97,14 +90,15 @@ img {
   color: #fff;
   border: var(--default-border);
   border-radius: 30px;
-  padding: 20px;
+  padding: 14px;
   cursor: pointer;
   display: inline-block;
-  margin-top: 3em;
+  margin-top: 22em;
   margin-right: 2em;
   margin-bottom: 2em;
   margin-left: 2em;
   text-decoration: none;
+  position: relative;
 }
 
 #next:hover {
@@ -116,7 +110,7 @@ img {
   color: #fff;
   border: var(--default-border);
   border-radius: 30px;
-  padding: 20px;
+  padding: 14px;
   cursor: pointer;
   display: inline-block;
   margin-top: 3em;
@@ -154,9 +148,9 @@ img {
   color: #fff;
   border: var(--default-border);
   border-radius: 3px;
-  padding: 20px;
+  padding: 13px;
   cursor: pointer;
-  margin-top: 1em;
+  margin-top: 10em;
   margin-right: 2em;
   margin-bottom: 2em;
   margin-left: 12.5em;
@@ -187,7 +181,7 @@ img {
 /* Questionário */
 
 .question {
-  font-weight: 600;
+  font-weight: 300;
   font-size: x-large;
   margin: 10px;
 }
@@ -205,11 +199,12 @@ label {
 
 input {
   cursor: pointer;
+  display: inline-block;
 }
 
-#home {
+/* #home {
   height: 60px;
-}
+} */
 
 footer {
   display: block;
