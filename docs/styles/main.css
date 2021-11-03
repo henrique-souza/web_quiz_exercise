@@ -54,6 +54,7 @@ label {
   max-width: 50rem;
   margin: 0 auto;
   padding: 5rem;
+  padding-top: 10px;
   line-height: 30px;
   border-bottom-style: ridge;
 }
@@ -67,7 +68,7 @@ p {
 }
 
 .question {
-  font-size: large;
+  font-size: x-large;
   font-weight: bolder;
 }
 
