@@ -201,8 +201,8 @@ const myQuestions = [
     question: "Questão 10 - Qual proteína do SARS-CoV-2 é responsável por possibilitar a entrada do vírus na célula?",
     answers: {
       a: "Proteína de Membrana",
-      b: "Proteína do Núcleo capsídeo.",
-      c: "Proteína Spike",
+      b: "Proteína do Núcleocapsídeo",
+      c: "Proteína da Espícula",
       d: "Proteína do Envelope",
     },
     correctAnswer: "c",
