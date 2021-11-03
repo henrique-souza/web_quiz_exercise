@@ -113,7 +113,7 @@ button {
   background-color: #2980b9;
   color: #fff;
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 3px 54px;
   cursor: pointer;
   display: inline-block;
   margin-top: 1em;
@@ -137,7 +137,7 @@ button {
   background-color: #d35400;
   color: #fff;
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 3px 54px;
   cursor: pointer;
   display: inline-block;
   margin-top: 1em;
@@ -161,7 +161,7 @@ button {
   background-color: #f39c12;
   color: #fff;
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 3px 54px;
   cursor: pointer;
   display: inline-block;
   margin-top: 1em;
@@ -185,7 +185,7 @@ button {
   background-color: #27ae60;
   color: #fff;
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 3px 54px;
   cursor: pointer;
   display: inline-block;
   margin-top: 1em;
