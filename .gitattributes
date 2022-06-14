@@ -6,5 +6,5 @@
 # *.css             text
 # *.html            text diff=html
 
-*.html linguist-detectable=false
-*.css linguist-detectable=false
+*/*.html linguist-detectable=false
+*/*.css linguist-detectable=false
