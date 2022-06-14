@@ -1,3 +1,5 @@
+*.docs linguist-detectable=true
+
 *                 text=auto
 *.js              text
 *.css             text
