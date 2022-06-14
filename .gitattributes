@@ -1,5 +1,5 @@
-#docs/* linguist-documentation=false
-
+docs/* linguist-documentation=true
+# Verificar se consigo detectar as linguagens utilizadas aqui
 *.js linguist-detectable=true
 *.css linguist-detectable=false
 *.html linguist-detectable=false
