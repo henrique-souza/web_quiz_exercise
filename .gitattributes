@@ -1,4 +1,4 @@
-#docs/* linguist-documentation=false
+docs/* linguist-documentation=true
 docs/* linguist-detectable=true
 
 *                 text=auto
